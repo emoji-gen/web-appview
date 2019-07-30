@@ -1,0 +1,12 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# virtualenv
+venv
+venv-*
+
+# project
+assets/**/*.js
+assets/**/*.css
