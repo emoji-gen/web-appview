@@ -3,4 +3,6 @@ node_modules
 yarn-error.log
 
 # project
-dist/
+public/*.css
+public/*.html
+public/*.js
