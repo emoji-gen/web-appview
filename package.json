@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "scripts": {
     "start": "nf start",
-    "build": "webpack"
+    "build": "webpack && gulp"
   },
   "repository": "git@github.com:emoji-gen/web-appview.git",
   "author": "Pine Mizune <pinemz@gmail.com>",

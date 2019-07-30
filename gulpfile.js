@@ -7,22 +7,27 @@ const nunjucks = require('gulp-nunjucks')
 const plumber = require('gulp-plumber')
 const rename = require('gulp-rename')
 
+// --------------------------------------------------------
+
+const isDev = process.argv.includes('watch')
+const siteUrl = isDev ? '/appview' : '//emoji-gen.ninja/appview';
 
 // ------ nunjucks ----------------------------------------
 
 gulp.task('nunjucks', () =>
   gulp.src([
-    'docs/**/*.j2',
-    '!docs/*.j2',
-    '!docs/includes/**/*.j2',
+    'templates/**/*.j2',
+    '!templates/*.j2',
+    '!templates/includes/**/*.j2',
   ])
-    .pipe(nunjucks.compile())
+    .pipe(plumber())
+    .pipe(nunjucks.compile({ siteUrl }))
     .pipe(rename({ extname: '.html' }))
     .pipe(gulp.dest('public'))
 )
 
 gulp.task('nunjucks-watch', () => {
-  gulp.watch(['docs/**/*.j2'], gulp.task('nunjucks'))
+  gulp.watch(['templates/**/*.j2'], gulp.task('nunjucks'))
 })
 
 
