@@ -8,9 +8,9 @@ const plumber = require('gulp-plumber')
 const rename = require('gulp-rename')
 
 
-// ------ ejs ---------------------------------------------
+// ------ nunjucks ----------------------------------------
 
-gulp.task('ejs', () =>
+gulp.task('nunjucks', () =>
   gulp.src([
     'docs/**/*.j2',
     '!docs/*.j2',
@@ -21,8 +21,8 @@ gulp.task('ejs', () =>
     .pipe(gulp.dest('public'))
 )
 
-gulp.task('watch-ejs', () => {
-  gulp.watch(['docs/**/*.j2'], gulp.task('ejs'))
+gulp.task('nunjucks-watch', () => {
+  gulp.watch(['docs/**/*.j2'], gulp.task('nunjucks'))
 })
 
 
@@ -35,9 +35,9 @@ gulp.task('clean', () =>
 
 // ------ for production ----------------------------------
 
-gulp.task('default', gulp.series('clean', 'ejs'))
+gulp.task('default', gulp.series('clean', 'nunjucks'))
 
 
 // ------ for development ---------------------------------
 
-gulp.task('watch', gulp.series('clean', 'ejs', 'watch-ejs'))
+gulp.task('watch', gulp.series('clean', 'nunjucks', 'nunjucks-watch'))

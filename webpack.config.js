@@ -29,8 +29,8 @@ module.exports = {
   // Output
   //~~~~~~~~~
   output: {
-    filename: 'script.js',
-    path: join(__dirname, 'dist'),
+    filename: 'dist/script.js',
+    path: join(__dirname),
   },
 
 
@@ -79,9 +79,8 @@ module.exports = {
   resolve: {
     alias: {
       '@': __dirname,
-      vue: 'vue/dist/vue.runtime.esm.js',
     },
-    extensions: ['.js', '.vue', '.yml'],
+    extensions: ['.js'],
   },
 
 
@@ -99,15 +98,17 @@ module.exports = {
     new CleanWebpackPlugin({
       dry: false,
       dangerouslyAllowCleanPatternsOutsideProject: true,
-      cleanOnceBeforeBuildPatterns:
-        ['js', 'css'].map(v => join(__dirname, '..', `server/assets/*.${v}`)),
+      cleanOnceBeforeBuildPatterns: [
+        join(__dirname, 'public/*.css'),
+        join(__dirname, 'dist/*.js'),
+      ],
       verbose: false,
     }),
     new EventHooksPlugin({
       run() { console.log('Mode: ' + mode) },
       watchRun() { console.log('Mode: ' + mode) },
     }),
-    new MiniCssExtractPlugin({ filename: 'style.css' }),
+    new MiniCssExtractPlugin({ filename: 'public/style.css' }),
     new webpack.DefinePlugin({ DEBUG: isDev }),
   ],
 
