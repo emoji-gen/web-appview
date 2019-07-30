@@ -18,6 +18,7 @@
     "foreman": "^3.0.1",
     "gulp": "^4.0.2",
     "gulp-ejs": "^4.1.1",
+    "gulp-nunjucks": "^5.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
     "mini-css-extract-plugin": "^0.8.0",
