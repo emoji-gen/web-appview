@@ -1,0 +1,1 @@
+wp: webpack --watch

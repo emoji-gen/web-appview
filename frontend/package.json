@@ -1,8 +1,0 @@
-{
-  "name": "@emoji-gen/web-appview",
-  "version": "1.0.0",
-  "main": "index.js",
-  "repository": "git@github.com:emoji-gen/web-appview.git",
-  "author": "Pine Mizune <pinemz@gmail.com>",
-  "license": "MIT"
-}
