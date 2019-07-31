@@ -1,4 +1,4 @@
-## web-appview
+## AppView for Emoji Generator
 
 The static pages for iOS/Android application WebView.
 
