@@ -4,5 +4,19 @@ html, body {
   margin: 0;
   padding: 0;
   background-color: #fff;
-  font-family:'Open Sans', sans-serif;
+}
+
+/**
+ * Font family
+ */
+:lang(ja) {
+  body {
+    font-family: 'Hiragino Kaku Gothic ProN', 'Noto Sans', 'Noto Sans CJK JP', sans-serif;
+  }
+}
+
+:lang(en) {
+  body {
+    font-family: 'Avenir', 'Arial', sans-serif;
+  }
 }

@@ -21,16 +21,21 @@
    */
   &__github,
   &__twitter {
-    &__item {
-      margin: 10px 0;
-      padding: 1px 0 0 42px;
-      height: 30px;
-      line-height: 30px;
+    margin: 18px 0 40px 8px;
+    padding: 0;
+    > li {
+      padding: 0;
       list-style-type: none;
       list-style-position: inside;
+    }
+    &__item {
+      display: block;
+      padding: 11px 0 10px 58px;
+      height: 30px;
+      line-height: 30px;
       background-size: 26px auto;
       background-repeat: no-repeat;
-      background-position: 0 center;
+      background-position: 15px center;
       font-size: $font-medium;
 
       > a {
@@ -43,7 +48,7 @@
    * List : GitHub
    */
   &__github {
-    margin: 18px 0 40px;
+    margin-bottom: 40px;
     &__item {
       background-image: url($site-url + '/img/github-26x26@1x.png');
       background-image: image-set(
@@ -62,7 +67,6 @@
    * List : Twitter
    */
   &__twitter {
-    margin: 18px 0;
     &__item {
       background-image: url($site-url + '/img/twitter-26x26@1x.png');
       background-image: image-set(

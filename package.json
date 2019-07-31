@@ -41,5 +41,8 @@
     "url": "https://github.com/emoji-gen"
   },
   "license": "MIT",
-  "private": true
+  "private": true,
+  "dependencies": {
+    "normalize.css": "^8.0.1"
+  }
 }
