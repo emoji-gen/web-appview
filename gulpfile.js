@@ -7,6 +7,7 @@ const yaml = require('js-yaml')
 
 const gulp = require('gulp')
 const flatmap = require('gulp-flatmap')
+const htmlmin = require('gulp-htmlmin')
 const nunjucks = require('gulp-nunjucks')
 const plumber = require('gulp-plumber')
 const rename = require('gulp-rename')
@@ -38,6 +39,10 @@ gulp.task('nunjucks', () =>
           path.basename += '_' + locale
           path.extname = '.html'
         }))
+    }))
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      removeAttributeQuotes: true,
     }))
     .pipe(gulp.dest('public/appview'))
 )
