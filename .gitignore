@@ -4,5 +4,5 @@ yarn-error.log
 
 # project
 dist/
-public/*.css
+public/**/*.css
 public/**/*.html

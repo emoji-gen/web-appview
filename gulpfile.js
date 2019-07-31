@@ -28,18 +28,18 @@ gulp.task('nunjucks', () =>
         'templates/**/*.j2',
         '!templates/base.j2',
       ])
-      .pipe(plumber())
-      .pipe(nunjucks.compile({
-        siteUrl,
-        locale,
-        ...messages,
-      }))
-      .pipe(rename(path => {
-        path.basename += '_' + locale
-        path.extname = '.html'
-      }))
+        .pipe(plumber())
+        .pipe(nunjucks.compile({
+          siteUrl,
+          locale,
+          ...messages,
+        }))
+        .pipe(rename(path => {
+          path.basename += '_' + locale
+          path.extname = '.html'
+        }))
     }))
-    .pipe(gulp.dest('public'))
+    .pipe(gulp.dest('public/appview'))
 )
 
 gulp.task('nunjucks-watch', () => {
@@ -53,7 +53,7 @@ gulp.task('nunjucks-watch', () => {
 // ------ clean -------------------------------------------
 
 gulp.task('clean', () =>
-  del(['public/*.html'])
+  del(['public/**/*.html'])
 )
 
 
