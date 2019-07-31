@@ -2,8 +2,12 @@
   "name": "@emoji-gen/web-appview",
   "version": "1.0.0",
   "scripts": {
-    "start": "nf start",
-    "build": "webpack && gulp"
+    "start": "run-p -l watch:**",
+    "watch:webpack": "webpack --watch",
+    "watch:gulp": "gulp watch",
+    "build": "run-p -l build:**",
+    "build:webpack": "webpack",
+    "build:gulp": "gulp"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.1",
@@ -12,14 +16,15 @@
     "css-loader": "^3.1.0",
     "del": "^5.0.0",
     "event-hooks-webpack-plugin": "^2.1.4",
-    "foreman": "^3.0.1",
     "gulp": "^4.0.2",
-    "gulp-ejs": "^4.1.1",
+    "gulp-flatmap": "^1.0.2",
     "gulp-nunjucks": "^5.0.0",
     "gulp-plumber": "^1.2.1",
     "gulp-rename": "^1.4.0",
+    "js-yaml": "^3.13.1",
     "mini-css-extract-plugin": "^0.8.0",
     "node-sass": "^4.12.0",
+    "npm-run-all": "^4.1.5",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",

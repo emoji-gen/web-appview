@@ -1,3 +1,4 @@
 'use strict'
 
-require('./pages/appview.scss')
+require('./pages/AppView.scss')
+require('./templates/Contact.scss')
