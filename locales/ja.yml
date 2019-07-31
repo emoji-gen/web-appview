@@ -1,2 +1,12 @@
 Contact:
   heading: 'お問い合わせ'
+  github_issues_description: 'アプリの不具合報告、要望などは GitHub の Issues までお願い致します。'
+  twitter_description: 'もしくは、作者の Twitter までお問い合わせ下さい。'
+
+Privacy:
+  heading: 'プライバシーポリシー'
+  preface: '絵文字ジェネレーター (以下「本アプリ」といいます。) における利用者情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定めます。'
+  section1_heading: '取得する利用者情報'
+  section1_description: '本アプリにおいて取得される利用者情報は、下記の通りとします。'
+  section1_items1: '(1) OS バージョン、本アプリバージョン、起動頻度など、アプリの利用状況に関する情報'
+  section1_items2: '(2) 生成された絵文字の情報'
