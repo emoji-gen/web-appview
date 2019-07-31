@@ -6,19 +6,29 @@
 
     <p class="Privacy__paragraph">{{ Privacy.preface }}</p>
 
-    <h2>{{ Privacy.section1_heading }}</h2>
-    <p>{{ Privacy.section1_description }}</p>
-    <ul>
-      <li>{{ Privacy.section1_items1 }}</li>
-      <li>{{ Privacy.section1_items2 }}</li>
+    <h2 class="Privacy__sub-heading">1. {{ Privacy.section1_heading }}</h2>
+    <p class="Privacy__paragraph">{{ Privacy.section1_description }}</p>
+    <ul class="Privacy__items">
+      <li>(1) {{ Privacy.section1_items1 }}</li>
+      <li>(2) {{ Privacy.section1_items2 }}</li>
     </ul>
 
-    <h2>{{ Privacy.section2_heading }}</h2>
-    <p>{{ Privacy.section2_description }}</p>
-    <ul>
-      <li>{{ Privacy.section2_items1 }}</li>
-      <li>{{ Privacy.section2_items2 }}</li>
-      <li>{{ Privacy.section2_items3 }}</li>
+    <h2 class="Privacy__sub-heading">2. {{ Privacy.section2_heading }}</h2>
+    <p class="Privacy__paragraph">{{ Privacy.section2_description }}</p>
+    <ul class="Privacy__items">
+      <li>(1) {{ Privacy.section2_items1 }}</li>
+      <li>(2) {{ Privacy.section2_items2 }}</li>
+      <li>(3) {{ Privacy.section2_items3 }}</li>
     </ul>
+
+    <h2 class="Privacy__sub-heading">3. {{ Privacy.section3_heading }}</h2>
+    <p class="Privacy__paragraph">{{ Privacy.section3_description }}</p>
+
+    <h2 class="Privacy__sub-heading">4. {{ Privacy.section4_heading }}</h2>
+    <p class="Privacy__paragraph">{{ Privacy.section4_description }}</p>
+
+    <address>{{ Privacy.email_label }}: ultimate.emoji.gen@gmail.com</address>
+
+    <p class="Privacy__paragraph Privacy__paragraph--afterword">{{ Privacy.afterword }}</p>
   </div>
 {% endblock %}

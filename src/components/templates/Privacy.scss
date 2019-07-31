@@ -2,4 +2,49 @@
 @import 'includes/_variables.scss';
 
 .Privacy {
+  /**
+   * Heading
+   */
+  &__heading {
+    @extend %heading;
+  }
+  &__sub-heading {
+    @extend %sub-heading;
+  }
+
+  /**
+   * Paragraph
+   */
+  &__paragraph {
+    @extend %paragraph;
+
+    &--afterword {
+      margin: 28px 0 0;
+      text-align: right;
+    }
+  }
+
+  /**
+   * List
+   */
+  &__items {
+    margin: 15px 0 15px 0;
+    padding: 0;
+    list-style-type: none;
+    list-style-position: inside;
+    font-size: $font-medium;
+
+    li + li {
+      margin-top: 12px;
+    }
+  }
+
+  /**
+   * Address
+   */
+  address {
+    margin: 20px 0 0;
+    font-size: $font-medium;
+    font-style: normal;
+  }
 }

@@ -23,10 +23,10 @@
   &__twitter {
     margin: 18px 0 40px 8px;
     padding: 0;
+    list-style-type: none;
+    list-style-position: inside;
     > li {
       padding: 0;
-      list-style-type: none;
-      list-style-position: inside;
     }
     &__item {
       display: block;
