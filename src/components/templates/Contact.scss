@@ -1,0 +1,16 @@
+@import 'includes/_mixins.scss';
+@import 'includes/_variables.scss';
+
+.Contact {
+  &__heading {
+    margin: 0 0 25px;
+    // color: $color-green-dark;
+    // font-size: $font-size-xlarge;
+  }
+  &__paragraph {
+    margin: 0 0 8px;
+    line-height: 1.5;
+    // font-size: $font-size-medium;
+  }
+}
+
