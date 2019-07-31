@@ -5,7 +5,7 @@
     "start": "run-p -l watch:**",
     "watch:webpack": "webpack --watch",
     "watch:gulp": "gulp watch",
-    "watch:serve": "superstatic public --port 8000",
+    "watch:serve": "superstatic --port 8000 --host 0.0.0.0",
     "watch:bs": "browser-sync start --config bs-config.js",
     "build": "run-p -l build:**",
     "build:webpack": "webpack",

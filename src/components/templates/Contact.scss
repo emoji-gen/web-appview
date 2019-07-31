@@ -2,15 +2,74 @@
 @import 'includes/_variables.scss';
 
 .Contact {
+  /**
+   * Heading
+   */
   &__heading {
-    margin: 0 0 25px;
-    // color: $color-green-dark;
-    // font-size: $font-size-xlarge;
+    @extend %heading;
   }
+
+  /**
+   * Paragraph
+   */
   &__paragraph {
-    margin: 0 0 8px;
-    line-height: 1.5;
-    // font-size: $font-size-medium;
+    @extend %paragraph;
+  }
+
+  /**
+   * List
+   */
+  &__github,
+  &__twitter {
+    &__item {
+      margin: 10px 0;
+      padding: 1px 0 0 42px;
+      height: 30px;
+      line-height: 30px;
+      list-style-type: none;
+      list-style-position: inside;
+      background-size: 26px auto;
+      background-repeat: no-repeat;
+      background-position: 0 center;
+      font-size: $font-medium;
+
+      > a {
+        text-decoration: none;
+      }
+    }
+  }
+
+  /**
+   * List : GitHub
+   */
+  &__github {
+    margin: 18px 0 40px;
+    &__item {
+      background-image: url($site-url + '/img/github-26x26@1x.png');
+      background-image: image-set(
+        $site-url + '/img/github-26x26@1x.png' 1x,
+        $site-url + '/img/github-26x26@1x.png' 2x);
+      opacity: .70;
+
+      &__owner,
+      &__name {
+        margin-right: 2px;
+      }
+    }
+  }
+
+  /**
+   * List : Twitter
+   */
+  &__twitter {
+    margin: 18px 0;
+    &__item {
+      background-image: url($site-url + '/img/twitter-26x26@1x.png');
+      background-image: image-set(
+        $site-url + '/img/twitter-26x26@1x.png' 1x,
+        $site-url + '/img/twitter-26x26@1x.png' 2x);
+      opacity: .88;
+    }
   }
 }
 

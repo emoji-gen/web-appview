@@ -1,0 +1,18 @@
+/**
+ * includes/_mixins.scss
+ */
+
+@import 'includes/_variables';
+
+%heading {
+  margin: 0 0 25px;
+  color: $color-green-dark;
+  font-size: $font-xlarge;
+}
+
+%paragraph {
+  margin: 0 0 8px;
+  line-height: 1.5;
+  color: $color-black;
+  font-size: $font-medium;
+}
