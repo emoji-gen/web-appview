@@ -5,6 +5,8 @@
     "start": "run-p -l watch:**",
     "watch:webpack": "webpack --watch",
     "watch:gulp": "gulp watch",
+    "watch:serve": "superstatic public --port 8000",
+    "watch:bs": "browser-sync start --config bs-config.js",
     "build": "run-p -l build:**",
     "build:webpack": "webpack",
     "build:gulp": "gulp"
@@ -28,6 +30,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "sass-loader": "^7.1.0",
+    "superstatic": "^6.0.4",
     "webpack": "^4.38.0",
     "webpack-cli": "^3.3.6"
   },
