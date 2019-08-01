@@ -1,6 +1,6 @@
 ## AppView for Emoji Generator
 
-The static pages for iOS/Android application WebView.
+:comet: The static pages for iOS and Android application WebView.
 
 ## Requirements
 
