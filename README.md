@@ -1,4 +1,7 @@
 ## AppView for Emoji Generator
+[![CircleCI](https://circleci.com/gh/emoji-gen/web-appview/tree/master.svg?style=shield)](https://circleci.com/gh/emoji-gen/web-appview/tree/master)
+[![dependencies Status](https://david-dm.org/emoji-gen/web-appview/status.svg)](https://david-dm.org/emoji-gen/web-appview)
+[![devDependencies Status](https://david-dm.org/emoji-gen/web-appview/dev-status.svg)](https://david-dm.org/emoji-gen/web-appview?type=dev)
 
 :comet: The static pages for iOS and Android application WebView.
 
