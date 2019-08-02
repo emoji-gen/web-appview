@@ -1,0 +1,41 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/workspace
+    docker:
+      - image: node:12.7.0-buster
+    environment:
+      GIT_TERMINAL_PROMPT: 0
+      TZ: Asia/Tokyo
+    steps:
+      - checkout
+      - run:
+          name: System information
+          command: |
+            echo "Node v$(node -v | tr -d v)"
+            echo "NPM v$(npm -v | tr -d v)"
+            echo "Yarn v$(yarn --version | tr -d v)"
+      - restore_cache:
+          keys:
+            - v1-{{ arch }}-{{ checksum "yarn.lock" }}
+            - v1-{{ arch }}
+      - run:
+          name: Install dependencies
+          command: |
+            yarn
+      - run:
+          name: Build
+          command: |
+            yarn run build
+      - save_cache:
+          key: v1-{{ arch }}-{{ checksum "yarn.lock" }}
+          paths:
+            - ~/workspace/node_modules
+            - ~/.cache/yarn/
+      - run:
+          name: Deployment
+          command: |
+            if [ "$CIRCLE_BRANCH" == 'master' ]; then
+              yarn global add firebase-tools
+              firebase deploy --non-interactive
+            fi
