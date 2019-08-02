@@ -1,9 +1,12 @@
 'use strict'
 
+const { spawn } = require('child_process')
+const fs = require('fs').promises
 const { basename } = require('path')
 
 const del = require('del')
 const yaml = require('js-yaml')
+const log = require('fancy-log')
 
 const gulp = require('gulp')
 const flatmap = require('gulp-flatmap')
@@ -18,8 +21,9 @@ const rename = require('gulp-rename')
 const isDev = process.argv.includes('watch')
 const siteUrl = isDev ? '/appview' : '//emoji-gen.ninja/appview';
 
-gulp.task('nunjucks', () =>
-  gulp.src('locales/*.yml')
+gulp.task('nunjucks', async () => {
+  const css = await fs.readFile('dist/style.css', 'utf-8')
+  return gulp.src('locales/*.yml')
     .pipe(plumber())
     .pipe(flatmap((stream, file) => {
       const locale = basename(file.path, '.yml')
@@ -33,6 +37,7 @@ gulp.task('nunjucks', () =>
         .pipe(nunjucks.compile({
           siteUrl,
           locale,
+          css,
           ...messages,
         }))
         .pipe(rename(path => {
@@ -45,13 +50,39 @@ gulp.task('nunjucks', () =>
       removeAttributeQuotes: true,
     }))
     .pipe(gulp.dest('public/appview'))
-)
+})
 
 gulp.task('nunjucks-watch', () => {
   gulp.watch([
+    'dist/*.css',
     'locales/*.yml',
     'templates/**/*.j2',
   ], gulp.task('nunjucks'))
+})
+
+
+// ----- webpack ------------------------------------------
+
+function runWebpack(opts, cb) {
+  const message = 'Run webpack with options `' + opts.join(' ') + '`'
+  log(message)
+
+  const child = spawn('webpack', opts)
+  if (child.stdout != null) {
+    child.stdout.on('data', data => process.stdout.write(data))
+  }
+  if (child.stderr != null) {
+    child.stderr.on('data', data => process.stderr.write(data))
+  }
+  child.on('close', cb)
+}
+
+gulp.task('webpack', cb => {
+  runWebpack([], cb)
+})
+
+gulp.task('webpack-watch', cb => {
+  runWebpack(['--watch', '--progress'], cb)
 })
 
 
@@ -64,9 +95,15 @@ gulp.task('clean', () =>
 
 // ------ for production ----------------------------------
 
-gulp.task('default', gulp.series('clean', 'nunjucks'))
+gulp.task('default', gulp.series('clean', 'webpack', 'nunjucks'))
 
 
 // ------ for development ---------------------------------
 
-gulp.task('watch', gulp.series('clean', 'nunjucks', 'nunjucks-watch'))
+gulp.task('watch', gulp.series(
+  'clean',
+  gulp.parallel(
+    'nunjucks-watch',
+    'webpack-watch',
+  )
+))

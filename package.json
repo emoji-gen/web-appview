@@ -3,13 +3,10 @@
   "version": "1.0.0",
   "scripts": {
     "start": "run-p -l watch:**",
-    "watch:webpack": "webpack --watch",
     "watch:gulp": "gulp watch",
     "watch:serve": "superstatic --port 8000 --host 0.0.0.0",
     "watch:bs": "browser-sync start --config bs-config.js",
-    "build": "run-p -l build:**",
-    "build:webpack": "webpack",
-    "build:gulp": "gulp"
+    "build": "gulp"
   },
   "devDependencies": {
     "autoprefixer": "^9.6.1",
@@ -18,6 +15,7 @@
     "css-loader": "^3.1.0",
     "del": "^5.0.0",
     "event-hooks-webpack-plugin": "^2.1.4",
+    "fancy-log": "^1.3.3",
     "gulp": "^4.0.2",
     "gulp-flatmap": "^1.0.2",
     "gulp-htmlmin": "^5.0.1",

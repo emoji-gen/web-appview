@@ -29,8 +29,8 @@ module.exports = {
   // Output
   //~~~~~~~~~
   output: {
-    filename: 'dist/script.js',
-    path: join(__dirname),
+    filename: 'script.js',
+    path: join(__dirname, 'dist'),
   },
 
 
@@ -99,7 +99,6 @@ module.exports = {
       dry: false,
       dangerouslyAllowCleanPatternsOutsideProject: true,
       cleanOnceBeforeBuildPatterns: [
-        join(__dirname, 'public/**/*.css'),
         join(__dirname, 'dist/**/*'),
       ],
       verbose: false,
@@ -108,7 +107,7 @@ module.exports = {
       run() { console.log('Mode: ' + mode) },
       watchRun() { console.log('Mode: ' + mode) },
     }),
-    new MiniCssExtractPlugin({ filename: 'public/appview/style.css' }),
+    new MiniCssExtractPlugin({ filename: 'style.css' }),
     new webpack.DefinePlugin({ DEBUG: isDev }),
   ],
 
