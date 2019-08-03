@@ -3,6 +3,10 @@ Contact:
   github_issues_description: 'Please create a new issue on GitHub for requests and bug reports.'
   twitter_description: 'For other inquiries, please contact the official Twitter.'
 
+Copyright:
+  heading: 'Copyright'
+  app_name: 'Emoji Generator'
+
 Privacy:
   heading: 'Privacy policy'
   preface: 'Regarding handling of user information in emoji generator (hereinafter referred to as "the application"), the privacy policy (hereinafter referred to as "the policy") is defined as follows.'

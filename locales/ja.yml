@@ -3,6 +3,10 @@ Contact:
   github_issues_description: 'アプリの不具合報告、要望などは GitHub の Issues までお願い致します。'
   twitter_description: 'もしくは、作者の Twitter までお問い合わせ下さい。'
 
+Copyright:
+  heading: '著作権表記'
+  app_name: '絵文字ジェネレーター'
+
 Privacy:
   heading: 'プライバシーポリシー'
   preface: '絵文字ジェネレーター (以下「本アプリ」といいます。) における利用者情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」といいます。）を定めます。'

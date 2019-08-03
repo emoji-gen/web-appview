@@ -2,4 +2,22 @@
 @import 'includes/_variables.scss';
 
 .Copyright {
+  /**
+   * Heading
+   */
+  &__heading {
+    @extend %heading;
+  }
+  &__sub-heading {
+    @extend %sub-heading;
+  }
+
+  /**
+   * Paragraph
+   */
+  p {
+    @extend %paragraph;
+    font-size: $font-small;
+  }
 }
+
