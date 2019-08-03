@@ -20,6 +20,10 @@ jobs:
             - v1-{{ arch }}-{{ checksum "yarn.lock" }}
             - v1-{{ arch }}
       - run:
+          name: Install retry command
+          command: |
+            ./.circleci/setup-retry.sh
+      - run:
           name: Install dependencies
           command: |
             yarn
@@ -33,9 +37,31 @@ jobs:
             - ~/workspace/node_modules
             - ~/.cache/yarn/
       - run:
+          name: Notify deploy started
+          command: |
+            if [ "$CIRCLE_BRANCH" = 'master' ]; then
+              retry -- pip3 install -q slackweb
+              python3 scripts/notify.py started
+            fi
+      - run:
           name: Deployment
           command: |
             if [ "$CIRCLE_BRANCH" == 'master' ]; then
               yarn global add firebase-tools
               firebase deploy --non-interactive
             fi
+      - run:
+          name: Notify deploy successful
+          command: |
+            if [ "$CIRCLE_BRANCH" = 'master' ]; then
+              retry -- pip3 install -q slackweb
+              python3 scripts/notify.py successful
+            fi
+      - run:
+          name: Notify deploy failed
+          command: |
+            if [ "$CIRCLE_BRANCH" = 'master' ]; then
+              retry -- pip3 install -q slackweb
+              python3 scripts/notify.py failed
+            fi
+          when: on_fail
