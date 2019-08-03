@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/workspace
     docker:
-      - image: emoji-gen/node-py23:node12.7.0-py2.7.16-py3.7.4
+      - image: emojigen/node-py23:node12.7.0-py2.7.16-py3.7.4
     environment:
       GIT_TERMINAL_PROMPT: 0
       TZ: Asia/Tokyo
